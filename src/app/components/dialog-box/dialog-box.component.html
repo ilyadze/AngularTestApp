@@ -1,1 +1,48 @@
-<p>dialog-box works!</p>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Title</mat-label>
+    <input matInput formControlName="title" />
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Price</mat-label>
+    <input matInput formControlName="price" />
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Year</mat-label>
+    <input matInput formControlName="year" />
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Chip</mat-label>
+    <input matInput formControlName="chip" />
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>SSD</mat-label>
+    <input matInput formControlName="ssd" />
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Memory</mat-label>
+    <input matInput formControlName="memory" />
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Display</mat-label>
+    <input matInput formControlName="display" />
+  </mat-form-field>
+  <button
+    class="button"
+    mat-flat-button
+    style="margin-right: 5px"
+    color="primary"
+    type="submit"
+  >
+    {{ isNew ? "Добавить Товар" : "Обновить" }}
+  </button>
+  <button
+    class="button"
+    mat-flat-button
+    color="primary"
+    type="button"
+    (click)="onNoClick()"
+  >
+    Отмена
+  </button>
+</form>

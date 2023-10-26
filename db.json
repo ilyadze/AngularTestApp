@@ -1,5 +1,71 @@
 {
-  "posts": [{ "id": 1, "title": "json-server", "author": "typicode" }],
-  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
-  "profile": { "name": "typicode" }
+  "products": [
+    {
+      "id": 1,
+      "title": "Macbook Air",
+      "price": 1200,
+      "year": 2020,
+      "image": "assets/images/macbook.jpeg",
+      "configure": {
+        "chip": "M1",
+        "ssd": "512 GB",
+        "memory": "16 GB",
+        "display": "Retina"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Macbook",
+      "price": 900,
+      "year": 2022,
+      "image": "assets/images/macbook.jpeg",
+      "configure": {
+        "chip": "M1",
+        "ssd": "256 GB",
+        "memory": "16 GB",
+        "display": "Retina"
+      }
+    },
+    {
+      "id": 7,
+      "title": "ahh",
+      "price": null,
+      "year": null,
+      "image": "assets/images/macbook.jpeg",
+      "configure": {
+        "chip": null,
+        "ssd": null,
+        "memory": null,
+        "display": null
+      }
+    }
+  ],
+  "basket": [
+    {
+      "id": 7,
+      "title": "ahh",
+      "price": null,
+      "year": null,
+      "image": "assets/images/macbook.jpeg",
+      "configure": {
+        "chip": null,
+        "ssd": null,
+        "memory": null,
+        "display": null
+      }
+    },
+    {
+      "id": 2,
+      "title": "Macbook",
+      "price": 900,
+      "year": 2022,
+      "image": "assets/images/macbook.jpeg",
+      "configure": {
+        "chip": "M1",
+        "ssd": "256 GB",
+        "memory": "16 GB",
+        "display": "Retina"
+      }
+    }
+  ]
 }
