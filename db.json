@@ -42,30 +42,18 @@
   ],
   "basket": [
     {
-      "id": 7,
-      "title": "ahh",
-      "price": null,
-      "year": null,
-      "image": "assets/images/macbook.jpeg",
-      "configure": {
-        "chip": null,
-        "ssd": null,
-        "memory": null,
-        "display": null
-      }
-    },
-    {
-      "id": 2,
-      "title": "Macbook",
-      "price": 900,
-      "year": 2022,
+      "id": 1,
+      "title": "Macbook Air",
+      "price": 1200,
+      "year": 2020,
       "image": "assets/images/macbook.jpeg",
       "configure": {
         "chip": "M1",
-        "ssd": "256 GB",
+        "ssd": "512 GB",
         "memory": "16 GB",
         "display": "Retina"
-      }
+      },
+      "quantity": 1
     }
   ]
 }

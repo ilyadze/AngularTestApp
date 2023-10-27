@@ -13,6 +13,9 @@ import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
 export class ProductsComponent implements OnInit {
   products: IProducts[];
   productsSubsciption: Subscription;
+  basket: IProducts[];
+  basketSubsciption: Subscription;
+
   canEdit: boolean = true;
 
   constructor(
@@ -26,12 +29,32 @@ export class ProductsComponent implements OnInit {
         this.products = data;
       }
     );
+    this.basketSubsciption =
+      this.ProductService.getProductsFromBasket().subscribe((data) => {
+        this.basket = data;
+      });
   }
 
   addToBasket(product: IProducts) {
+    product.quantity = 1;
+    let findItem;
+
+    if (this.basket.length > 0) {
+      findItem = this.basket.find((item) => item.id === product.id);
+      if (findItem) this.updateToBasket(findItem);
+      else this.postToBasket(product);
+    } else this.postToBasket(product);
+  }
+
+  postToBasket(product: IProducts) {
     this.ProductService.postProductToBasket(product).subscribe((data) => {
-      console.log(data);
+      this.basket.push(data);
     });
+  }
+
+  updateToBasket(product: IProducts) {
+    product.quantity += 1;
+    this.ProductService.updateProductToBasket(product).subscribe((data) => {});
   }
 
   openDialog(product?: IProducts): void {
@@ -78,5 +101,6 @@ export class ProductsComponent implements OnInit {
 
   ngOnDestroy() {
     if (this.productsSubsciption) this.productsSubsciption.unsubscribe();
+    if (this.basketSubsciption) this.basketSubsciption.unsubscribe();
   }
 }
